@@ -6,7 +6,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const upload = uploadPhoto(fileName)
   return Promise.allSettled([await signup, await upload]).then((result) =>
     ({ status: result.status, value: result.values })
-  ).catch(() =>
-  ({ status: result.status, value: result.value })
+  ).catch((err) =>
+  ({ status: err.status, value: err.value })
   );
 }
