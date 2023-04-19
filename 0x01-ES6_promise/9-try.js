@@ -3,9 +3,9 @@ export default function guardrail(mathFunction) {
   try {
     const result = mathFunction();
     res.push(result);
-  }catch(err) {
+  } catch(err) {
     res.push(err.toString());
-  }finally {
+  } finally {
     res.push('Guardrail was processed');
   }
   return res;
