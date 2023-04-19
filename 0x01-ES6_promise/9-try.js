@@ -4,7 +4,7 @@ export default async function guardrail(mathFunction) {
     const res = await mathFunction();
     res.push(res);
   }catch (err) {
-    res.push(errr.messages);
+    res.push(err.message);
   }finally {
     res.push('Guardrail was processed');
   }
