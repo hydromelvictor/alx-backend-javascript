@@ -5,7 +5,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const res = []
   try {
     const signup = await signUpUser(firstName, lastName);
-    res.push({ status: 'filfilled', value: signup });
+    res.push({ status: 'fulfilled', value: signup });
     await uploadPhoto(fileName);
   } catch (err) {
     res.push({ status: 'rejected', value: err.toString() })
