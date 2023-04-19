@@ -1,10 +1,10 @@
 export default async function guardrail(mathFunction) {
   const res = [];
   try {
-    const res = mathFunction();
-    res.push(res);
+    const result = mathFunction();
+    res.push(result);
   }catch (err) {
-    res.push(err.toString());
+    res.push(err.message);
   }finally {
     res.push('Guardrail was processed');
   }
