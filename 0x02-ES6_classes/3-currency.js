@@ -1,5 +1,5 @@
 export default class Currency {
-  constructor(name, code) {
+  constructor(code, name) {
     if (typeof name !== 'string' || typeof code !== 'string') throw new Error();
     this._name = name;
     this._code = code;
