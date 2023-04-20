@@ -16,12 +16,10 @@ export default class Pricing {
   }
 
   set amount(amount) {
-    if (typeof amount !== 'number') throw new Error();
     this._amount = amount;
   }
 
   set currency(currency) {
-    if (!(currency instanceof Currency)) throw new Error();
     this._currency = currency;
   }
 

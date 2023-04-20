@@ -1,7 +1,8 @@
 export default class HolbertonClass {
   constructor(size, location) {
-    if (typeof size === 'number') this._size = size;
-    if (typeof size === 'string') this._location = location;
+    if (typeof size !== 'number' || typeof size !== 'string') throw new Error();
+    this._size = size;
+    this._location = location;
   }
 
   [Symbol.toPrimitive](tag) {
