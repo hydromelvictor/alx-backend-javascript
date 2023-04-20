@@ -1,6 +1,6 @@
 export default class HolbertonClass {
   constructor(size, location) {
-    if (typeof size !== 'number' || typeof size !== 'string') throw new Error();
+    if (typeof size !== 'number' || typeof location !== 'string') throw new Error();
     this._size = size;
     this._location = location;
   }
