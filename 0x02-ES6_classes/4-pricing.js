@@ -16,10 +16,12 @@ export default class Pricing {
   }
 
   set amount(amount) {
+    if (typeof amount !== 'number') throw new Error();
     this._amount = amount;
   }
 
   set currency(currency) {
+    if (!(currency instanceof Currency)) throw new Error();
     this._currency = currency;
   }
 
@@ -28,6 +30,7 @@ export default class Pricing {
   }
 
   static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number' || typeof conversionRate !== 'number') throw new Error();
     return amount * conversionRate;
   }
 }
