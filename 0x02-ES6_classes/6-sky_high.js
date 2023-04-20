@@ -5,6 +5,7 @@ export default class SkyHighBuilding extends Building {
     if (typeof floors !== 'number') throw new Error();
     super(sqft);
     this._floors = floors;
+    this._sqft = sqft;
   }
 
   get sqft() {
