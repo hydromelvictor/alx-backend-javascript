@@ -10,7 +10,7 @@ export default class HolbertonCourse {
   }
 
   get length() {
-    return history._length;
+    return this._length;
   }
 
   get students() {
