@@ -8,5 +8,6 @@ export default class HolbertonClass {
   [Symbol.toPrimitive](tag) {
     if (tag === 'number') return this._size;
     if (tag === 'string') return this._location;
+    return this;
   }
 }
