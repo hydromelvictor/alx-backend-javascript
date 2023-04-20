@@ -1,5 +1,6 @@
 export default class Currency {
   constructor(name, code) {
+    if (typeof name !== 'string' || typeof code !== 'string') throw new Error();
     this._name = name;
     this._code = code;
   }
@@ -13,12 +14,10 @@ export default class Currency {
   }
 
   set name(name) {
-    if (typeof name !== 'string') throw new Error();
     this._name = name;
   }
 
   set code(code) {
-    if (typeof code !== 'string') throw new Error();
     this._code = code;
   }
 
