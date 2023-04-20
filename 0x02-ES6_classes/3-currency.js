@@ -1,7 +1,7 @@
 export default class Currency {
   constructor(name, code) {
-    if (typeof name === 'string') this._name = name;
-    if (typeof code === 'string') this._code = code;
+    this._name = name;
+    this._code = code;
   }
 
   get name() {
