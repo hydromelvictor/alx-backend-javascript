@@ -5,5 +5,5 @@ export default function queryAPI(endpoint) {
     if (elt === endpoint) nbre++;
     if (nbre > 5) throw new Error('Endpoint load is high');
   }
-return nbre;
+  return nbre;
 }

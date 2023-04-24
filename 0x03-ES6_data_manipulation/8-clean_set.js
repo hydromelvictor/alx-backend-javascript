@@ -1,5 +1,5 @@
 export default function cleanSet(set, startString) {
-  let res = [];
+  const res = [];
   if (!startString || !startString.length) return res;
   for (const elt of set) {
     if (elt && elt.startsWith(startString)) {
