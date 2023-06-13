@@ -15,15 +15,15 @@ module.exports = function countStudents(path) {
         }
         body.push(rows);
       }
-      fields = new set()
+      fields = new set();
       for (let i = 0; i < body.length; i++) {
         if (!fields.has(body[i].field)) {
-          field.add(body[i].field);
+          fields.add(body[i].field);
         }
       }
       console.log(`Number of students: ${line.length}`);
       for (let i = 0; i < fields.length; i++) {
-        let name = []
+        let name = [];
         for (let j = 0; j < body.length; j++) {
           if (body[j].field === fields[i]) {
             name.push(body[j].firstname);
