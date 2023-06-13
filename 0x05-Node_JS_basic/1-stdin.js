@@ -8,6 +8,6 @@ process.stdin.on('data', () => {
   }
 });
 
-process.stdin.on('exit', () => {
+process.on('exit', () => {
   process.stdout.write('This important software is now closing\n');
 });
