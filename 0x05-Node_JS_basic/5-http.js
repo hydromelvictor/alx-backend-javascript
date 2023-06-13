@@ -10,10 +10,9 @@ const app = http.createServer((req, res) => {
       res.end('Hello Holberton School!');
       break;
     case '/students':
-      res.end('This is the list of our students');
+      res.end('This is the list of our students\ncountStudents');
       break;
     default:
-      res.end(countStudents);
       break;
   }
 });
