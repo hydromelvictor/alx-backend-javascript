@@ -26,6 +26,7 @@ function countStudents(path) {
           })
           console.log(`Number of students in ${elt}: ${firstname.length}. List: ${firstname.join(',')}`);
         });
+        resolve(students)
       });
     });
   } else {
