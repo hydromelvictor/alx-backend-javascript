@@ -1,4 +1,3 @@
-const process = require('process');
-module.exports = function displayMessage(argument) {
-  process.stdout.write(argument + '\n');
-};
+const displayMessage = (msg) => console.log(msg)
+module.exports = displayMessage;
+
