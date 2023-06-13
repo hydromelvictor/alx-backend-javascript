@@ -3,7 +3,7 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
-    const data = fs.readFile(path, 'utf-8');
+    const data = fs.readFileSync(path, 'utf-8');
     const students = [];
     const fields = new set();
     data.split('\n').forEach(element => {
@@ -22,7 +22,7 @@ function countStudents(path) {
       console.log(`Number of students in ${elt}: ${firstname.length}. List: ${firstname.join(',')}`);
     });
   } catch (e) {
-    throw error('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 }
 
