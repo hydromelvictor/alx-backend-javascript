@@ -6,11 +6,12 @@ function countStudents(path) {
     const data = fs.readFileSync(path, 'utf-8');
     const students = [];
     const fields = new set();
-    data.split('\n').forEach(element => {
+    data.split('\n').trim().forEach(element => {
       let line = element.split(',');
       fields.add(line[3]);
       students.push(line);
     });
+    students = students.shift();
     console.log(`Number of students: ${students.length}`);
     const firstname = []
     fields.forEach(elt => {
