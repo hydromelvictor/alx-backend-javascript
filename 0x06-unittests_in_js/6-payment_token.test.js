@@ -6,10 +6,10 @@ const expect = chai.expect;
 
 describe('async test', () => {
   it('', () => {
-    expect(getApi).to.be.an.instanceOf(Promise);
+    expect(getApi()).to.be.an.instanceOf(Promise);
     getApi(true)
     .then(() => {
-      expect(getApi.data).to.be.equal('Successful response from the API');
+      expect(getApi().data).to.be.equal('Successful response from the API');
       done();
     });
   });
