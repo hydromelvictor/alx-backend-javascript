@@ -7,10 +7,9 @@ describe('test request', () => {
     request(app)
       .get('/index')
       .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('string');
-        res.body.length.should.not.be.eq(0);
-      done();
+        expect(res.status).to.equal(200);
+        expect(res.body).to.equal('Welcome to the payment system');
       });
+      done();
   });
 });
