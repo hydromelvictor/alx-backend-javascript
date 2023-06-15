@@ -6,14 +6,14 @@ const { it, describe } = require('mocha');
 const sendPaymentRequestToApi = require('./4-payment');
 
 describe("test sendPaymentRequestToApi function", function() {
+  const print = sinon.stub(console, 'log');
   it("verify", function() {
     const stubcalc = sinon.stub(Utils, 'calculateNumber');
-    stubcalc.withArgs('SUM', 100, 20).returns(10)
-    const calculateNumber = sinon.spy(Utils, 'calculateNumber');
+    stubcalc.withArgs('SUM', 100, 20).returns(10);
     sendPaymentRequestToApi(100, 20);
-    expect(calculateNumber.calledOnce).to.be.true;
+    expect(print.calledOnce).to.be.true;
     expect(console.log('The total is: 10')).to.be.all;
-    calculateNumber.restore();
+    print.restore();
     stubcalc.restore();
   });
 });
