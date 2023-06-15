@@ -5,8 +5,12 @@ const chai  = require('chai');
 const expect = chai.expect;
 
 describe('async test', () => {
-  it('', (done) => {
-    expect(getApi(true)).to.equal('Successful response from the API');
-    done();
+  it('', () => {
+    expect(getApi).to.be.an.instanceOf(Promise);
+    getApi(true)
+    .then(() => {
+      expect(getApi.data).to.be.equal('Successful response from the API');
+      done();
+    });
   });
 });
