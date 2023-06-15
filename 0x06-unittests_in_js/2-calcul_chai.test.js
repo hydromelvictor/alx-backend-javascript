@@ -6,7 +6,7 @@ const expect = chai.expect;
 
 describe("calculateNumber function test to 1-calcul", function() {
     it("correct clacul -1", function() {
-        ass.equal(calculateNumber('SUM', 0.4, 0.1), 0);
+        expect(calculateNumber('SUM', 0.4, 0.1)).to.equal(0);
     });
 
     it("correct clacul -1", function() {
