@@ -7,10 +7,17 @@ const app = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   switch (req.url) {
     case '/':
-      res.end('Hello Holberton School!');
+      res.write('Hello Holberton School!');
+      res.end();
       break;
     case '/students':
-      res.end('This is the list of our students\ncountStudents');
+      res.write('This is the list of our students\n');
+      res.end();
+      try {
+        countStudents(process.argv[2])
+      } catch (error) {
+        res.end(error.message);
+      }
       break;
     default:
       break;
