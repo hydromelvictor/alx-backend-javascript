@@ -6,7 +6,7 @@ const expect = chai.expect;
 
 describe('async test', () => {
   it('', (done) => {
-    expect(getApi(true)).to.equal({data: 'Successful response from the API' });
+    expect(getApi(true)).to.equal('Successful response from the API');
     done();
   });
 });
