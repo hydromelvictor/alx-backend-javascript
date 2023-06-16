@@ -1,13 +1,12 @@
-const { error } = require('console');
 const fs = require('fs');
 
 function countStudents(path) {
   try {
     const data = fs.readFileSync(path, 'utf-8');
-    const students = [];
-    const fields = new set();
+    let students = [];
+    const fields = new Set();
     data.split('\n').forEach(element => {
-      let line = element.split(',');
+      const line = element.split(',');
       fields.add(line[3]);
       students.push(line);
     });

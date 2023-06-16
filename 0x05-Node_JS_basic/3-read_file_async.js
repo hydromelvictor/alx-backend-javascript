@@ -8,7 +8,7 @@ function countStudents(path) {
         if (err) {
           throw Error('Cannot load the database');
         }
-        const fields = new set();
+        const fields = new Set();
         const students = [];
         data.split('\n').forEach(elt => {
           let line = elt.split(',');
