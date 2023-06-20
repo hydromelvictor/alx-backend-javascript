@@ -10,21 +10,23 @@ function countStudents(path) {
         }
         const fields = new Set();
         const students = [];
-        data.split('\n').forEach(elt => {
+	data = data.trim().split('\n');
+	const newlines = [];
+	for (let i = 1; i < data.length; i++) {
+          newlines.push(data[i]);
+	}
+        newlines.forEach(elt => {
           let line = elt.split(',');
-          fields.add(line[3]);
-          students.push(line);
+          if (line.length === 4) { 
+            fields.add(line[3]);
+            students.push(line);
+	  }
         });
-        students = students.shift();
         console.log(`Number of students: ${students.length}`);
-        const firstname = [];
         fields.forEach(elt => {
-          students.forEach(ps => {
-            if (ps[3] === elt) {
-              firstname.push(ps[0]);
-            }
-          })
-          console.log(`Number of students in ${elt}: ${firstname.length}. List: ${firstname.join(',')}`);
+	  const studie = students.filter(ys => ys[3] === elt);
+	  const names = studie.map(ws => ws[0]);
+          console.log(`Number of students in ${elt}: ${names.length}. List: ${names.join(',')}`);
         });
         resolve(students)
       });
