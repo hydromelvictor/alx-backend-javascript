@@ -20,7 +20,7 @@ function countStudents(path) {
       const names = studies.map(ps => ps[0]);
       console.log(`Number of students in ${elt}: ${names.length}. List: ${names.join(',')}`);
     });
-  } catch (e) {
+  } catch(e) {
     throw new Error("Cannot load the database");
   }
 }
