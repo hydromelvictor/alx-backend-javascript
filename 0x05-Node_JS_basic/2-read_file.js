@@ -17,7 +17,6 @@ function countStudents(path) {
      	 students.push(line);
       }
     });
-	console.log(fields);
     console.log(`Number of students: ${students.length}`);
     fields.forEach(elt => {
       const studie = students.filter(ps => ps[3] === elt);
